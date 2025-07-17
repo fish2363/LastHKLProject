@@ -18,7 +18,6 @@ namespace Member.LCM._01.Script.Unit
 
         private float _modifiedValue = 0;
 
-        
         public float Value => statValue + _modifiedValue;
 
         public float StatValue
