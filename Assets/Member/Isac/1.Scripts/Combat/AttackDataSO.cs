@@ -9,6 +9,7 @@ namespace Member.Isac._1.Scripts.Combat
         public float movementPower;
         public float damageMultiplier;
         public float damageIncrease;
+        public bool isPowerAttack;
         public float impulseForce;
         public float knockBackForce;
         public float knockBackDuration;
