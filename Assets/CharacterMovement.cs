@@ -9,8 +9,9 @@ public class CharacterMovement : MonoBehaviour, IEntityComponent
     [SerializeField] private Transform cameraRoot;
 
     public bool CanManualMovement { get; set; } = true;
+    public bool CanSprint { get; set; } = true;
 
-    [field: SerializeField] public float MoveSpeed { get; set; } = 8f;
+    [field: SerializeField] public float MoveSpeed { get; set; } = 3f;
     private Vector3 _movementInput;
     private Vector3 _velocity;
     private float _verticalVelocity;
@@ -38,6 +39,7 @@ public class CharacterMovement : MonoBehaviour, IEntityComponent
 
     private void Update()
     {
+        if (Time.timeScale == 0) return;
         Rotate();
         CalculateMovement();
         ApplyGravity();
@@ -47,6 +49,8 @@ public class CharacterMovement : MonoBehaviour, IEntityComponent
         float mouseY = Input.GetAxis("Mouse Y");
         AddLookInput(new Vector2(mouseX, mouseY));
     }
+
+    public void Sprint(bool isRun) => MoveSpeed = isRun ? 6f : 3f;
 
     private void Rotate()
     {

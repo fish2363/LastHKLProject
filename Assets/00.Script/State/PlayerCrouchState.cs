@@ -14,6 +14,7 @@ public class PlayerCrouchState : PlayerState
         base.Enter();
         _player.InputReader.OnCrouchPressed += CancelCrouchHandler;
         _mover.StopImmediately();
+        _mover.CanSprint = false;
         _mover.MoveSpeed /= 2;
         cameraSetting.ChangeCamera(true);
     }
@@ -29,6 +30,7 @@ public class PlayerCrouchState : PlayerState
     {
         _player.InputReader.OnCrouchPressed -= CancelCrouchHandler;
         _mover.MoveSpeed *= 2;
+        _mover.CanSprint = true;
         cameraSetting.ChangeCamera(false);
         base.Exit();
     }

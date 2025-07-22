@@ -9,8 +9,7 @@ public class CameraSettingComponent : MonoBehaviour,IEntityComponent
 
     public void Initialize(Entity entity)
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        ESCManager.Instance.LockMouse();
     }
 
     public void ChangeCamera(bool isCrouch)

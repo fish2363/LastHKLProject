@@ -6,8 +6,8 @@ public class HeadBobController : MonoBehaviour, IEntityComponent
 {
     [SerializeField] private bool _enable = true;
 
-    [SerializeField, Range(0, 0.1f)] private float _amplitude = 0.015f;
-    [SerializeField, Range(0, 30f)] private float _frequency = 10.0f;
+    [SerializeField, Range(0, 0.1f)] private float _amplitude = 0.0014f;
+    [SerializeField, Range(0, 30f)] private float _frequency = 10.5f;
 
     [SerializeField] private Transform _camera = null;
     [SerializeField] private Transform _cameraHolder = null;
@@ -22,6 +22,9 @@ public class HeadBobController : MonoBehaviour, IEntityComponent
         _controller = entity.GetCompo<CharacterMovement>();
         _startPos = _camera.localPosition;
     }
+
+    public void SetAmplitude(float value) => _amplitude = value;
+    public void SetFrequency(float value) => _frequency = value;
 
     private void CheckMotion()
     {

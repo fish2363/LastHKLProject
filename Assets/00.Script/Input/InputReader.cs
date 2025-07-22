@@ -10,7 +10,7 @@ public class InputReader : ScriptableObject,InputSystem_Actions.IPlayerActions
     public event Action OnAttackPressed;
     public event Action OnCrouchPressed;
     public event Action OnInteractPressed;
-    public event Action OnSprintPressed;
+    public event Action<bool> OnSprintPressed;
 
     public Vector2 MovementKey { get; private set; }
     private InputSystem_Actions _controls;
@@ -55,6 +55,8 @@ public class InputReader : ScriptableObject,InputSystem_Actions.IPlayerActions
     public void OnSprint(InputAction.CallbackContext context)
     {
         if (context.performed)
-            OnSprintPressed?.Invoke();
+            OnSprintPressed?.Invoke(true);
+        if (context.canceled)
+            OnSprintPressed?.Invoke(false);
     }
 }
