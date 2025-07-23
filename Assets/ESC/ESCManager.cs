@@ -152,7 +152,6 @@ public class ESCManager : MonoBehaviour
         {
             Resolution r = Screen.resolutions[i];
             float aspect = (float)r.width / r.height;
-            float refreshRate = r.refreshRateRatio.numerator / (float)r.refreshRateRatio.denominator;
 
             if (Mathf.Abs(aspect - (16f / 9f)) < 0.1f && r.width >= 1280)
             {

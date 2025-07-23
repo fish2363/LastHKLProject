@@ -3,6 +3,8 @@ using UnityEngine;
 public class PlayerCrouchState : PlayerState
 {
     private CameraSettingComponent cameraSetting;
+    private const float crouchHeight = 1f;
+    private const float defalutHeight = 2f;
 
     public PlayerCrouchState(Entity entity, int animationHash) : base(entity, animationHash)
     {
@@ -14,8 +16,10 @@ public class PlayerCrouchState : PlayerState
         base.Enter();
         _player.InputReader.OnCrouchPressed += CancelCrouchHandler;
         _mover.StopImmediately();
+
         _mover.CanSprint = false;
-        _mover.MoveSpeed /= 2;
+        _mover.SetMoveSpeed(_mover.MoveSpeed /= 2);
+        _mover.SetColliderHeight(crouchHeight);
         cameraSetting.ChangeCamera(true);
     }
 
@@ -28,10 +32,11 @@ public class PlayerCrouchState : PlayerState
 
     public override void Exit()
     {
+        cameraSetting.ChangeCamera(false);
         _player.InputReader.OnCrouchPressed -= CancelCrouchHandler;
         _mover.MoveSpeed *= 2;
         _mover.CanSprint = true;
-        cameraSetting.ChangeCamera(false);
+        _mover.SetColliderHeight(defalutHeight);
         base.Exit();
     }
 

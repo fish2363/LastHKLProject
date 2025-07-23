@@ -25,6 +25,9 @@ public class CharacterMovement : MonoBehaviour, IEntityComponent
         _entity = entity;
     }
 
+    public void SetMoveSpeed(float value)
+            => MoveSpeed = value;
+
     public void SetMovementDirection(Vector2 input)
     {
         _movementInput = new Vector3(input.x, 0, input.y).normalized;
@@ -36,6 +39,8 @@ public class CharacterMovement : MonoBehaviour, IEntityComponent
         _pitch -= lookDelta.y * sensitivity;
         _pitch = Mathf.Clamp(_pitch, -85f, 85f);
     }
+
+    public void SetColliderHeight(float value) => DOTween.To(() => characterController.height, (x) => characterController.height = x,value,0.1f);
 
     private void Update()
     {
