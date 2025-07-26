@@ -1604,7 +1604,7 @@ GameObject:
   - component: {fileID: 349837355}
   - component: {fileID: 349837354}
   m_Layer: 0
-  m_Name: ScreenSkakeTester
+  m_Name: ScreenSkakeTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
