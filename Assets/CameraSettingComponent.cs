@@ -1,4 +1,3 @@
-using Member.Isac._1.Scripts.Entities;
 using Unity.Cinemachine;
 using UnityEngine;
 

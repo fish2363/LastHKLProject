@@ -8,8 +8,9 @@ public class Test : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.G))
         {
+            //FindAnyObjectByType<MouseAutomationRoutine>().RunRoutine();
             FindObjectOfType<WindowShaker>()?.ShakeWindow();
         }
     }
