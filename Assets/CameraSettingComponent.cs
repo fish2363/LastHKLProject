@@ -8,7 +8,7 @@ public class CameraSettingComponent : MonoBehaviour,IEntityComponent
 
     public void Initialize(Entity entity)
     {
-        ESCManager.Instance.LockMouse();
+       // ESCManager.Instance.LockMouse();
     }
 
     public void ChangeCamera(bool isCrouch)

@@ -44,14 +44,17 @@ public class MouseController : MonoBehaviour
 
     public Vector2[] movePath;
 
+    public bool isRepeat;
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isRepeat)
             StartCoroutine(MoveMouseSequence());
     }
 
     IEnumerator MoveMouseSequence()
     {
+        isRepeat = true;
         POINT p;
         GetCursorPos(out p);
         Vector2 currentPos = new Vector2(p.X, p.Y);
@@ -72,6 +75,7 @@ public class MouseController : MonoBehaviour
             Click();
             yield return new WaitForSeconds(0.2f);
         }
+        StartCoroutine(MoveMouseSequence());
     }
 
     IEnumerator MoveMouseSmoothly(Vector2 start, Vector2 end, float duration)

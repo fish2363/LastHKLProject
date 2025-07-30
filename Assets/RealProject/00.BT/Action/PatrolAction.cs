@@ -30,6 +30,7 @@ public partial class PatrolAction : Action
 
     protected override Status OnUpdate()
     {
+        Debug.Log(_navMovement.IsArrived);
         if (_navMovement.IsArrived) //도착 시 석세스
             return Status.Success;
         return Status.Running;

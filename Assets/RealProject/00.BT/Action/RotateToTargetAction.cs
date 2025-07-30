@@ -30,6 +30,7 @@ public partial class RotateToTargetAction : Action
     {
         Quaternion targetRot = Movement.Value.LookAtTarget(Target.Value.position); //회전을 하겠지.
         const float angleThreshold = 5f;
+        Debug.Log(Quaternion.Angle(targetRot, Self.Value.rotation) < angleThreshold);
         return Quaternion.Angle(targetRot, Self.Value.rotation) < angleThreshold;
     }
 }

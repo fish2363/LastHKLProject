@@ -1,0 +1,16 @@
+{
+    "name": "ObjectPoolEditor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:33d7164d0a802fc419f7f207cd7379eb"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

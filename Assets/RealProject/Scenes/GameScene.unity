@@ -1752,6 +1752,7 @@ MonoBehaviour:
   - {x: 1200, y: 200}
   - {x: 700, y: 500}
   - {x: 200, y: 1000}
+  isRepeat: 0
 --- !u!1001 &351718462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3760,7 +3761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MoveSpeed>k__BackingField: 5
   agent: {fileID: 1375864360}
-  stopOffset: 2
+  stopOffset: 0.1
   rotateSpeed: 10
 --- !u!1 &1375864357
 GameObject:
