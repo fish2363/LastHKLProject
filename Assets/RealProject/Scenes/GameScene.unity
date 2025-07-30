@@ -2627,7 +2627,7 @@ Transform:
   m_GameObject: {fileID: 766321806}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.870596, z: -0, w: 0.49199864}
-  m_LocalPosition: {x: 3.58, y: 0.913, z: -10.76}
+  m_LocalPosition: {x: 13.1, y: 0.913, z: -12.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3760,7 +3760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MoveSpeed>k__BackingField: 5
   agent: {fileID: 1375864360}
-  stopOffset: 0.05
+  stopOffset: 2
   rotateSpeed: 10
 --- !u!1 &1375864357
 GameObject:

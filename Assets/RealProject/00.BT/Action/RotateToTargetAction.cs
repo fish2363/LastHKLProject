@@ -5,13 +5,13 @@ using Action = Unity.Behavior.Action;
 using Unity.Properties;
 
 [Serializable, GeneratePropertyBag]
-[NodeDescription(name: "RotateToTarget", story: "[Movement] rotate to [Target] immediately [IsRightNow]", category: "Action", id: "526b0c14b9ddf66657202ecdc6896139")]
+[NodeDescription(name: "RotateToTarget", story: "[Movement] rotate [Self] to [Target] immediately [IsRightNow]", category: "Action", id: "526b0c14b9ddf66657202ecdc6896139")]
 public partial class RotateToTargetAction : Action
 {
     [SerializeReference] public BlackboardVariable<NavMovement> Movement;
+    [SerializeReference] public BlackboardVariable<Transform> Self;
     [SerializeReference] public BlackboardVariable<Transform> Target;
     [SerializeReference] public BlackboardVariable<bool> IsRightNow = new BlackboardVariable<bool>(false);
-    [SerializeReference] public BlackboardVariable<Transform> Self;
 
     protected override Status OnUpdate()
     {
